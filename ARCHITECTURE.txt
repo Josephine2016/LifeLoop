@@ -1,0 +1,35 @@
+LifeLoop Architecture - Text Diagram for README/DevPost
+
+User: Natural language (English/Pidgin) e.g. "PHCN 15k due 20th, need rice"
+   |
+   v
+Strands Agent (Python SDK)
+- System Prompt: You are LifeLoop life admin agent...
+- Tools list: 6 functions
+   |
+   v
+BedrockModel (anthropic.claude-haiku-4-5, us-west-2)
+- Autonomous reasoning: which tool(s) to call
+- Handles multi-step: add 2 bills + grocery + audit in one turn
+   |
+   +--> add_bill -> data/bills.json {name, amount, due_date, recurrence, category, reminder_at}
+   +--> check_due_bills -> reads bills.json, filters due within N days
+   +--> scan_receipt -> regex parses amount/items, calls add_bill/manage_groceries internally
+   +--> manage_groceries -> data/grocery.json {items[], added_at}
+   +--> audit_subscriptions -> groups bills by category=entertainment/subscription, sums monthly, detects duplicates
+   +--> search_best_practices -> Tavily/Exa (in production), for hackathon demonstrates specific query generation
+   |
+   v
+Response synthesizer
+- Summarizes actions taken
+- Lists upcoming bills, grocery count, audit result
+- Suggests saving tips from search
+
+Persistence: JSON files -> easily swapped to DynamoDB for AgentCore
+Deployment target: Bedrock AgentCore (tools are stateless, no UI state)
+
+
+
+
+
+

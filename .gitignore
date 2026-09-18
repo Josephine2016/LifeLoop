@@ -1,0 +1,12 @@
+data/
+__pycache__/
+.env
+*.mp4
+*.mp3
+venv/
+node_modules/
+.DS_Store
+*.log
+
+
+.venv/

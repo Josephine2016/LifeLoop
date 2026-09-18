@@ -1,0 +1,52 @@
+{
+  "bills": [
+    {
+      "id": 1,
+      "name": "PHCN",
+      "amount": 15000,
+      "due_date": "2026-09-20",
+      "recurring": "monthly",
+      "category": "utilities",
+      "created": "2026-09-15T01:53:56.724535"
+    },
+    {
+      "id": 2,
+      "name": "Netflix",
+      "amount": 2000,
+      "due_date": "2026-09-15",
+      "recurring": "monthly",
+      "category": "subscription",
+      "created": "2026-09-15T01:53:56.733489"
+    },
+    {
+      "id": 3,
+      "name": "PHCN",
+      "amount": 15000,
+      "due_date": "2026-09-20",
+      "recurring": "monthly",
+      "category": "utilities",
+      "created": "2026-09-15T02:49:26.835396"
+    },
+    {
+      "id": 4,
+      "name": "Netflix",
+      "amount": 2000,
+      "due_date": "2026-09-15",
+      "recurring": "monthly",
+      "category": "subscription",
+      "created": "2026-09-15T02:49:26.837596"
+    }
+  ],
+  "expenses": [],
+  "groceries": [
+    {
+      "item": "rice",
+      "quantity": "5kg"
+    },
+    {
+      "item": "rice",
+      "quantity": "5kg"
+    }
+  ],
+  "receipts": []
+}
